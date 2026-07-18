@@ -1,0 +1,47 @@
+Copyright (c) 2026 Josh B. All rights reserved.
+
+This application is distributed as a compiled program. It is not open source, and its
+source code is not published.
+
+
+PERMISSION TO USE
+
+You may download, install and use this application free of charge, for any purpose,
+including use within a business.
+
+You may not sell, rent, or charge others for the application itself, nor present it as
+your own work. You may not decompile, disassemble or reverse engineer it, except to the
+extent applicable law expressly permits despite this limitation.
+
+
+NO WARRANTY
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+This application reads and writes the programming of live fuel-tank monitoring consoles.
+That programming governs leak detection and regulatory compliance. It is intended for
+trained service technicians working on equipment they are authorised to service. You are
+responsible for backing up a console before writing to it, for keeping the rollback file
+the tool creates, and for verifying the console's programming and leak-detection operation
+after any write.
+
+
+INDEPENDENCE AND TRADEMARKS
+
+This is an independent tool. It is not developed, approved, endorsed, or supported by
+Gilbarco Veeder-Root, its parent, or any of its affiliated companies.
+
+TLS-350 is a trademark of Gilbarco Veeder-Root. All other product names and trademarks
+are the property of their respective owners, and are used only to describe what this tool
+works with.
+
+
+THIRD-PARTY COMPONENTS
+
+This application bundles third-party open-source components, which remain under their own
+licences. See THIRD-PARTY-NOTICES.md.
