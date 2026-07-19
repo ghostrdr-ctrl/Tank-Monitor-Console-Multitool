@@ -5,7 +5,7 @@ without asking you to install anything, the download bundles a frozen copy of a 
 the components below. Each remains under its own licence and its own copyright, held by its
 respective authors. They are listed here because the download redistributes them in binary form.
 
-The tool itself uses only the Python standard library — there are no third-party Python packages
+The tool itself uses only the Python standard library. There are no third-party Python packages
 in it.
 
 | Component | Version | Licence |

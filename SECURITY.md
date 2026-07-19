@@ -6,7 +6,7 @@ Please report security issues **privately**, not as a public issue.
 
 Use GitHub's [private vulnerability reporting](../../security/advisories/new) on this repository.
 If that is unavailable, open a normal issue saying only that you have a security report and asking
-for a contact — no details in the public issue.
+for a contact. Do not put any details in the public issue.
 
 Please include what you found, how to reproduce it, and what an attacker could achieve. You will
 get an acknowledgement, and a fix or an explanation of why it is not being changed. This is a
@@ -32,7 +32,7 @@ The tool checks this repository's releases for a newer version, and can install 
 operator says yes. Deliberate properties:
 
 - The browser is only ever sent to this repository's releases page, a **constant compiled into
-  the program** — never to a URL taken from the API response. A spoofed or altered reply cannot
+  the program**, never to a URL taken from the API response. A spoofed or altered reply cannot
   redirect anyone.
 - A download is accepted only if its URL sits under this repository's own
   `releases/download/` namespace, re-validated immediately before writing to disk, and the final
@@ -49,7 +49,7 @@ operator says yes. Deliberate properties:
 the same release data as the download URL, so they detect a corrupt or truncated file, not a
 malicious one. Authenticity therefore rests on HTTPS and on control of this GitHub account. The
 executable is Authenticode-signed, but with a **self-issued certificate**, so verifying that
-signature only proves the file was signed by whoever produced it — it is not backed by a
+signature only proves the file was signed by whoever produced it. It is not backed by a
 certificate authority. In practice this means **a compromised release, or a compromised account,
 would be installed by anyone who clicks yes.**
 
@@ -69,6 +69,6 @@ releases from this repository's releases page.
 ## Privacy
 
 The tool contacts the internet for exactly one thing: asking this repository whether a newer
-release exists. It sends no information about you, your site, or any console — no telemetry, no
+release exists. It sends no information about you, your site, or any console: no telemetry, no
 analytics, no usage reporting. Everything else it does is between your computer and the console
 on your own network.

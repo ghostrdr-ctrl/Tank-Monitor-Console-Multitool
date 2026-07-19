@@ -33,7 +33,7 @@ refreshed every few seconds. This only reads.
 Windows, and a network route to the console (its TCP/IP card, typically port 10001, or a
 serial-to-TCP bridge). Nothing else: the download is a single self-contained `.exe`.
 
-Supports **TLS-350** consoles. TLS-450 and TLS-450PLUS are **not** supported — that path was never
+Supports **TLS-350** consoles. TLS-450 and TLS-450PLUS are **not** supported. That path was never
 verified on real hardware, so rather than offer something untested against leak-detection
 equipment, the tool refuses those models outright.
 
@@ -80,7 +80,7 @@ consoles they are authorised to service.
 - **Print the console's setup at the console, before and after using this tool, and compare the
   two printouts.** That check does not depend on this tool being correct, which is exactly why it
   is worth doing.
-- A backup can be incomplete if the connection drops. The tool marks those files as partial —
+- A backup can be incomplete if the connection drops. The tool marks those files as partial, so
   do not treat one as a full copy of a console.
 - A certified technician must verify leak-detection operation after any write.
 
