@@ -8,6 +8,23 @@ TLS-450PLUS.
 **[Download the latest version](../../releases/latest)** and run it. There is nothing to install:
 the download is one `.exe`.
 
+**Backing up a console.** The setup is read and saved; with Readable ticked, each setting shows
+by name and value as it arrives.
+
+![Backing up a console, with each setting shown by name and value](screenshots/backup.png)
+
+**Restoring a backup.** Every setting written is read back afterwards: a check mark when the
+console holds what was written, a cross with both values when it does not.
+
+![A restore's read-back, with a check mark per matching setting and a cross on one that differs](screenshots/restore.png)
+
+**Moving a TLS-350 onto a TLS-450PLUS.** The migration is laid out in five steps, and nothing is
+written to a console until step 4.
+
+![The TLS-350 to TLS-450PLUS migration steps](screenshots/migration.png)
+
+The pictures use made-up sample data.
+
 ## What it does
 
 **Back up** a console's setup and save it. Reads the console's programming and writes either a
