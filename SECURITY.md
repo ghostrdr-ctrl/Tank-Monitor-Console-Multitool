@@ -2,73 +2,41 @@
 
 ## Reporting a vulnerability
 
-Please report security issues **privately**, not as a public issue.
+Report security issues privately through GitHub's
+[private vulnerability reporting](../../security/advisories/new). If that is unavailable, open an
+issue asking for a contact, with no details in it.
 
-Use GitHub's [private vulnerability reporting](../../security/advisories/new) on this repository.
-If that is unavailable, open a normal issue saying only that you have a security report and asking
-for a contact. Do not put any details in the public issue.
-
-Please include what you found, how to reproduce it, and what an attacker could achieve. You will
-get an acknowledgement, and a fix or an explanation of why it is not being changed. This is a
-small project maintained by Verbose Software, so please allow reasonable time.
+Include what you found, how to reproduce it, and what an attacker could do with it.
 
 ## Scope
 
-This tool reads and writes the programming of fuel-tank monitoring consoles, which governs leak
-detection and regulatory compliance. Reports that matter most:
+Most important:
 
-- anything that could make the tool **write to a console when it should not**, or write something
-  other than what the operator confirmed
-- anything that defeats the **update checks** described below
-- anything that could make a backup silently incomplete or a restore silently partial while
-  reporting success
+- anything that makes the tool write to a console when it should not, or write something other
+  than what the operator confirmed
+- anything that defeats the update checks below
+- anything that makes a backup or restore look complete when it is not
 
-Not in scope: the fact that Windows SmartScreen warns on the download (see below), and the
-accepted limitation of self-update authenticity, also described below.
+Not in scope: the Windows SmartScreen warning on download, and the self-update limitation below.
 
-## How updates are secured, and what that does not cover
+## Updates
 
-The tool checks this repository's releases for a newer version, and can install one when the
-operator says yes. Deliberate properties:
+- The tool checks this repository's releases, and installs an update only when the operator says
+  yes, and never while connected to a console.
+- The only page it opens is this repository's releases page, built into the program.
+- A download is accepted only from this repository's `releases/download/` address, over HTTPS,
+  and only if exactly one `.exe` is offered.
+- The download is checked for a Windows executable header, its size and its SHA-256 before
+  anything is replaced. The previous version is kept.
+- If the check fails or there is no internet, the tool carries on offline.
 
-- The browser is only ever sent to this repository's releases page, a **constant compiled into
-  the program**, never to a URL taken from the API response. A spoofed or altered reply cannot
-  redirect anyone.
-- A download is accepted only if its URL sits under this repository's own
-  `releases/download/` namespace, re-validated immediately before writing to disk, and the final
-  URL after redirects must still be HTTPS.
-- If more than one, or no, installable file is offered, the tool refuses rather than guessing
-  which executable to run.
-- The download is checked for a valid Windows executable header, a sane size, and the size the
-  release reports, before anything is replaced.
-- Installing is refused while the tool is communicating with a console, and the previous version
-  is kept so a bad update can be rolled back by hand.
-- Any failure to check for updates is silent: the tool carries on working offline.
-
-**What this does not prove: authenticity.** The size and hash used to check a download come from
-the same release data as the download URL, so they detect a corrupt or truncated file, not a
-malicious one. Authenticity therefore rests on HTTPS and on control of this GitHub account. The
-executable is Authenticode-signed, but with a **self-issued certificate**, so verifying that
-signature only proves the file was signed by whoever produced it. It is not backed by a
-certificate authority. In practice this means **a compromised release, or a compromised account,
-would be installed by anyone who clicks yes.**
-
-Each release publishes the SHA-256 of the executable in its notes so you can confirm the file you
-downloaded matches what was published.
-
-If the tool is deployed somewhere this risk is unacceptable, do not use the self-update feature:
-download releases manually and verify them under your own change control.
-
-## Windows SmartScreen
-
-The download is signed, but with a self-issued certificate, so Windows will still show
-"Windows protected your PC" the first time you run each new version. That is Windows saying it
-does not recognise the publisher, not that it found anything wrong with the file. Only download
-releases from this repository's releases page.
+**Authenticity is not proven.** The size and hash come from the same release data as the download,
+so they catch a corrupt file, not a malicious one. The executable is signed with a self-issued
+certificate, not one from a certificate authority. A compromised release or account would be
+installed by anyone who says yes. Where that risk is unacceptable, do not use self-update: download
+releases yourself and check the SHA-256 published in each release's notes.
 
 ## Privacy
 
-The tool contacts the internet for exactly one thing: asking this repository whether a newer
-release exists. It sends no information about you, your site, or any console: no telemetry, no
-analytics, no usage reporting. Everything else it does is between your computer and the console
-on your own network.
+The tool contacts the internet only to check this repository for a newer release. It sends nothing
+about you, your site or any console: no telemetry, no analytics.

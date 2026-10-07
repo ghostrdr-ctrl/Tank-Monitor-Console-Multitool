@@ -1,13 +1,8 @@
 # Third-party notices
 
-Tank Monitor Console Multitool is a native Windows program written in Rust. The
-download is one `.exe`; nothing else is installed. These open-source components are
-compiled into it. The full licence and copyright texts they ship are in
-`THIRD-PARTY-LICENSES.txt`, attached to every [release](../../releases/latest).
-
-The fonts the app draws with (Segoe UI and Consolas) are Windows' own and are not
-included in the download. The fallback fonts built into the egui library (listed
-below as `epaint_default_fonts`) are.
+Open-source components included in Tank Monitor Console Multitool. Their licence texts
+are in `THIRD-PARTY-LICENSES.txt`, attached to each [release](../../releases/latest).
+Segoe UI and Consolas are Windows' own fonts and are not included.
 
 | Component | Version | Licence | Source |
 |---|---|---|---|
@@ -196,6 +191,3 @@ below as `epaint_default_fonts`) are.
 | zerotrie | 0.2.5 | Unicode-3.0 | https://github.com/unicode-org/icu4x |
 | zerovec | 0.11.8 | Unicode-3.0 | https://github.com/unicode-org/icu4x |
 | zerovec-derive | 0.11.6 | Unicode-3.0 | https://github.com/unicode-org/icu4x |
-
-This list is generated from the build's own dependency data
-(`rust/tools/third_party_notices.py`), so it names exactly what is compiled in.
